@@ -2,9 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 * {
   margin: 0;
   padding: 0;
+
 }
 
 body {
@@ -21,6 +24,16 @@ body {
   padding: 80px 0;
 }
 
-.bg-header {
-  background-color: ;
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
+
+.parallax-bg {
+  background-image: url('./assets/dogwalkingbanner.jpg'); /* Update with your background image URL */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+

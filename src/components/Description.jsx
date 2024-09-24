@@ -1,19 +1,14 @@
 import React from "react";
 import Button from "./ui/Button";
 import descriptionimg from "../assets/descriptionimg.jpg";
+import Header from "./ui/Header";
 
-// TODO create a link js page for images
-
-const Description = () => {
+const Description = ({ para }) => {
   return (
     <div class="row flex flex-col items-center max-w-screen-xl  mx-auto md:flex-row sm:px-6 p-6">
       <div class="flex items-center py-5 md:w-1/2 md:pb-20 md:pt-10 md:pr-10">
         <div class="text-left">
-          <h2 class="text-4xl font-semibold leading-10 mb-6 tracking-tight  sm:text-5xl sm:leading-none md:text-6xl">
-            Our Promise
-            <br></br>
-            <span class="font-extrabold text-[#5cb464]">To You.</span>
-          </h2>
+          <Header firstText="Our Promise" secondText="To You" />
           <p class="max-w-lg mb-6 font-light text-gray-500 lg:mb-8 md:text-md lg:text-xl dark:text-gray-400">
             We provide dependable and compassionate pet care services, treating
             your pets as part of our family. <br></br>
