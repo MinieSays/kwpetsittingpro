@@ -63,7 +63,7 @@ const Modal = ({ showModal, toggleModal }) => {
           >
             <button
               onClick={toggleModal}
-              className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
+              className="absolute top-2 right-4 text-gray-500 hover:text-gray-700 text-3xl"
             >
               &times;
             </button>
@@ -71,7 +71,6 @@ const Modal = ({ showModal, toggleModal }) => {
             <h2 className="text-2xl font-bold mb-4 text-gray-800 text-center">
               Submit a request
             </h2>
-            {/* Form */}
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="flex flex-col md:flex-row gap-4">
                 <div className="flex-1">

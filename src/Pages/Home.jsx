@@ -6,6 +6,7 @@ import CallToAction from "../components/CallToAction";
 import TestimonialsSection from "../components/Testimonials";
 import heroimg from "../assets/image-header.jpg";
 import Section from "../components/Section";
+import { Helmet } from "react-helmet";
 
 const Home = () => {
   useEffect(() => {
@@ -14,6 +15,13 @@ const Home = () => {
 
   return (
     <section id="home">
+      <Helmet>
+        <title>KW Petsitting - Kitchener Dog Walker - Waterloo Petsitter</title>
+        <meta
+          name="KW Petsitting - Kitchener Dog Walker, Waterloo Petsitter"
+          content="Affordable Pet Sitting and Dog Walking Services in Kitchener Waterloo. Meet up with a local dog walker today."
+        />
+      </Helmet>
       <Hero
         title="Kitchener Dog Walker & Pet Sitter"
         subtitle="Looking for a Trusted Pet Sitter?"

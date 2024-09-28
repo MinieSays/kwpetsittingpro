@@ -11,6 +11,7 @@ import List from "../components/ListSection";
 import ParallaxBanner from "../components/ParallaxBanner";
 import Section from "../components/Section";
 import { listItems } from "../components/petsitting";
+import { Helmet } from "react-helmet";
 
 const Petsitting = () => {
   useEffect(() => {
@@ -18,6 +19,15 @@ const Petsitting = () => {
   }, []);
   return (
     <>
+      <Helmet>
+        <title>
+          Kitchener Pet Sitting - Waterloo House Sitting
+        </title>
+        <meta
+          name="Affordable Pet Sitter in Kitchener Waterloo - 226-978-2133"
+          content="Have a reliable pet sitter for your next vacation. Affordable rates. The best kitchener pet sitter."
+        />
+      </Helmet>
       <TopBanner
         title="Pet Sitting & House Sitting"
         subtitle="Leave your animals in their comfort zone with our pet sitting services"

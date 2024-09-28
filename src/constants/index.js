@@ -5,9 +5,10 @@ import reviewImg2 from "../assets/testimonial2.png";
 
 export const navLinks = [
   { name: "Home", to: "/" },
-  { name: "Dog Walking", to: "/dogwalking" },
-  { name: "Pet Sitting", to: "/petsitting" },
-  { name: "Boarding", to: "/boarding" },
+  { name: "Dog Walking", to: "/kitchener-dog-walker" },
+  { name: "Pet Sitting", to: "/kitchener-petsitter" },
+  { name: "Boarding", to: "/kitchener-boarding" },
+  { name: "Contact", to: "/contact" },
 ];
 
 export const testimonials = [

@@ -5,6 +5,7 @@ import FeaturesSection from "../components/FeaturesSection";
 import dogwalkingimg from "../assets/dogwalkingimg.jpg";
 import dogwalkingimg1 from "../assets/dogwalking1.jpg";
 import Section from "../components/Section";
+import { Helmet } from "react-helmet";
 
 const DogWalking = () => {
   useEffect(() => {
@@ -13,6 +14,15 @@ const DogWalking = () => {
 
   return (
     <>
+      <Helmet>
+        <title>
+          Kitchener Dog Walker - Waterloo Dog Walking Services
+        </title>
+        <meta
+          name="Group & Private Kitchener Dog Walker - Waterloo Dog Walker"
+          content="Safe and private dog walking in Kitchener. Maximum of 2 dogs within the group. Reach out today to see if we're the right fit."
+        />
+      </Helmet>
       <TopBanner
         title="Dog Walking Kitchener"
         subtitle="Group or Private Dog Walks While You're Away!"
@@ -86,11 +96,11 @@ const DogWalking = () => {
         imageAlt="Kitchener pet sitter"
         reverseColumns={false}
       />
-    <FeaturesSection
-      title="Our Services"
-      subtitle="We offer a variety of services for your pets"
-      callToAction="Learn More"
-    />
+      <FeaturesSection
+        title="Our Services"
+        subtitle="We offer a variety of services for your pets"
+        callToAction="Learn More"
+      />
     </>
   );
 };

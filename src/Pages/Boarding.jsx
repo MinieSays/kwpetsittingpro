@@ -8,6 +8,7 @@ import TopBanner from "../components/TopBanner";
 import Section from "../components/Section";
 import { listItems } from "../constants";
 import ListSection from "../components/ListSection";
+import { Helmet } from "react-helmet";
 
 const Boarding = () => {
   useEffect(() => {
@@ -16,6 +17,13 @@ const Boarding = () => {
 
   return (
     <>
+      <Helmet>
+        <title>KW Pet Sitting - Kitchener Dog Boarder - Waterloo Boarding</title>
+        <meta
+          name="Affordable Boarding in Kitchener Waterloo - 226-978-2133"
+          content="Safe and private dog boarding in Kitchener. Maximum of 2 dogs within the home. Reach out today to see if we're the right fit."
+        />
+      </Helmet>
       <TopBanner
         title="Pet Sitting & House Sitting"
         subtitle="Leave your animals in their comfort zone with our pet sitting services"
