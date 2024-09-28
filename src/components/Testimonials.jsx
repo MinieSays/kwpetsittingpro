@@ -1,32 +1,10 @@
 import React from "react";
 import TestimonialCard from "./ui/TestimonialCard";
-import reviewImg from "../assets/testimonial.png";
-import reviewImg1 from "../assets/testimonial1.png";
-import reviewImg2 from "../assets/testimonial2.png";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
+import { testimonials } from "../constants";
 
-const testimonials = [
-  {
-    image: reviewImg,
-    name: "Nicole R",
-    testimonial: "My furbaby was well taken care of!asdasdasdasd",
-    rating: 5,
-  },
-  {
-    image: reviewImg1,
-    name: "Matthew G",
-    testimonial: "Sarah is a great cat sitter and my cats love her.",
-    rating: 5,
-  },
-  {
-    image: reviewImg2,
-    name: "Sarah T",
-    testimonial: "A wonderful experience from start to finish.",
-    rating: 5,
-  },
-];
 
 const TestimonialsSection = () => {
   return (
@@ -41,11 +19,6 @@ const TestimonialsSection = () => {
           loop
           margin={30}
           autoplay
-          nav
-          navText={[
-            `<div class="nav-btn prev-slide"><i class="fa fa-chevron-left text-xl text-gray-600"></i></div>`,
-            `<div class="nav-btn next-slide"><i class="fa fa-chevron-right text-xl text-gray-600"></i></div>`,
-          ]}
           responsive={{
             0: { items: 1 },
             768: { items: 2 },

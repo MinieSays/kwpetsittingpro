@@ -36,8 +36,8 @@ const Modal = ({ showModal, toggleModal }) => {
               &times;
             </button>
 
-            <h2 className="text-2xl font-bold mb-4 text-gray-800">
-              Submit a request or call us at <br /> 226-978-2133
+            <h2 className="text-2xl font-bold mb-4 text-gray-800 text-center">
+              Submit a request
             </h2>
             {/* Form */}
             <form
@@ -45,36 +45,38 @@ const Modal = ({ showModal, toggleModal }) => {
               method="POST"
               className="space-y-4"
             >
-              <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5cb464] focus:border-transparent"
-                />
-              </div>
+              <div className="flex flex-col md:flex-row gap-4">
+                <div className="flex-1">
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium text-gray-700"
+                  >
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    className="w-full px-3 md:py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5cb464] focus:border-transparent"
+                  />
+                </div>
 
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5cb464] focus:border-transparent"
-                />
+                <div className="flex-1">
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium text-gray-700"
+                  >
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    className="w-full px-3 md:py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5cb464] focus:border-transparent"
+                  />
+                </div>
               </div>
 
               <div>
@@ -89,8 +91,53 @@ const Modal = ({ showModal, toggleModal }) => {
                   id="phone"
                   name="phone"
                   required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5cb464] focus:border-transparent"
+                  className="w-full px-3 md:py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5cb464] focus:border-transparent"
                 />
+              </div>
+
+              <div className="flex md:flex-row gap-4">
+                <div className="flex-1">
+                  <label
+                    htmlFor="date"
+                    className="block text-sm font-medium text-gray-700"
+                  >
+                    Select Service Date
+                  </label>
+                  <input
+                    type="date"
+                    id="date"
+                    name="date"
+                    required
+                    className="w-full px-3 md:py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5cb464] focus:border-transparent"
+                  />
+                </div>
+
+                <div className="flex-1">
+                  <label
+                    htmlFor="time"
+                    className="block text-sm font-medium text-gray-700"
+                  >
+                    Service Time
+                  </label>
+                  <select
+                    id="time"
+                    name="time"
+                    required
+                    className="w-full px-3 md:py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5cb464] focus:border-transparent"
+                  >
+                    <option value="">Select a time</option>
+                    <option value="9:00 AM">9:00 AM</option>
+                    <option value="10:00 AM">10:00 AM</option>
+                    <option value="11:00 AM">11:00 AM</option>
+                    <option value="12:00 PM">12:00 PM</option>
+                    <option value="1:00 PM">1:00 PM</option>
+                    <option value="2:00 PM">2:00 PM</option>
+                    <option value="3:00 PM">3:00 PM</option>
+                    <option value="4:00 PM">4:00 PM</option>
+                    <option value="5:00 PM">5:00 PM</option>
+                    <option value="6:00 PM">6:00 PM</option>
+                  </select>
+                </div>
               </div>
 
               <div>
@@ -105,58 +152,15 @@ const Modal = ({ showModal, toggleModal }) => {
                   name="message"
                   rows="4"
                   required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5cb464] focus:border-transparent"
+                  className="w-full px-3 md:py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5cb464] focus:border-transparent"
                 ></textarea>
-              </div>
-
-              <div>
-                <label
-                  htmlFor="date"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Select Service Date
-                </label>
-                <input
-                  type="date"
-                  id="date"
-                  name="date"
-                  required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5cb464] focus:border-transparent"
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="time"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Service Time
-                </label>
-                <select
-                  id="time"
-                  name="time"
-                  required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5cb464] focus:border-transparent"
-                >
-                  <option value="">Select a time</option>
-                  <option value="9:00 AM">9:00 AM</option>
-                  <option value="10:00 AM">10:00 AM</option>
-                  <option value="11:00 AM">11:00 AM</option>
-                  <option value="12:00 PM">12:00 PM</option>
-                  <option value="1:00 PM">1:00 PM</option>
-                  <option value="2:00 PM">2:00 PM</option>
-                  <option value="3:00 PM">3:00 PM</option>
-                  <option value="4:00 PM">4:00 PM</option>
-                  <option value="5:00 PM">5:00 PM</option>
-                  <option value="6:00 PM">6:00 PM</option>
-                </select>
               </div>
 
               <fieldset className="mb-4">
                 <legend className="block text-sm font-medium text-gray-700 mb-2">
                   Select Service
                 </legend>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-2 md:gap-4">
                   <label className="flex items-center">
                     <input
                       type="radio"
