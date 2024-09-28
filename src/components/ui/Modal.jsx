@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import emailjs from "emailjs-com";
+import { toast, Toaster } from "react-hot-toast";
 
 const Modal = ({ showModal, toggleModal }) => {
   const [showBackground, setShowBackground] = useState(false);
@@ -16,8 +18,38 @@ const Modal = ({ showModal, toggleModal }) => {
     setSelectedService(event.target.value);
   };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_c6bza06",
+        "template_jpd7gne",
+        event.target,
+        "lQtVcdnckCEuT2AQB"
+      )
+      .then(
+        (result) => {
+          toast.success(
+            "Your message has been received. We'll reach out to you within the next 48 hours. Thanks!",
+            {
+              duration: 6000,
+            }
+          );
+          toggleModal();
+        },
+        (error) => {
+          toast.error("Error sending email. Please try again.", {
+            duration: 5000,
+          });
+          console.error("Error sending email:", error.text);
+        }
+      );
+  };
+
   return (
     <>
+      <Toaster />
       {showModal && (
         <div
           className={`fixed inset-0 bg-black bg-opacity-70 z-50 flex justify-center items-center transition-transform duration-700 ease-out ${
@@ -40,11 +72,7 @@ const Modal = ({ showModal, toggleModal }) => {
               Submit a request
             </h2>
             {/* Form */}
-            <form
-              action="https://formspree.io/f/xzzplwnv"
-              method="POST"
-              className="space-y-4"
-            >
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div className="flex flex-col md:flex-row gap-4">
                 <div className="flex-1">
                   <label
@@ -64,6 +92,28 @@ const Modal = ({ showModal, toggleModal }) => {
 
                 <div className="flex-1">
                   <label
+                    htmlFor="phone"
+                    className="block text-sm font-medium text-gray-700"
+                  >
+                    Phone Number
+                  </label>
+                  <input
+                    onInput={(e) => {
+                      e.target.value = e.target.value.replace(/[^0-9]/g, "");
+                    }}
+                    inputMode="numeric"
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    required
+                    className="w-full px-3 md:py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5cb464] focus:border-transparent"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <div className="flex-1">
+                  <label
                     htmlFor="email"
                     className="block text-sm font-medium text-gray-700"
                   >
@@ -77,22 +127,6 @@ const Modal = ({ showModal, toggleModal }) => {
                     className="w-full px-3 md:py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5cb464] focus:border-transparent"
                   />
                 </div>
-              </div>
-
-              <div>
-                <label
-                  htmlFor="phone"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Phone Number
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  required
-                  className="w-full px-3 md:py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5cb464] focus:border-transparent"
-                />
               </div>
 
               <div className="flex md:flex-row gap-4">

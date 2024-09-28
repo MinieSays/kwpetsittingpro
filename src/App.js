@@ -7,13 +7,15 @@ import DogWalking from "./Pages/DogWalking";
 import Petsitting from "./Pages/Petsitting";
 import Boarding from "./Pages/Boarding";
 import Contact from "./Pages/Contact";
-import '@fortawesome/fontawesome-free/css/all.min.css';
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
     <div className="App">
+      <Toaster />
       <Router>
-      <Navbar />
+        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/dogwalking" element={<DogWalking />} />
@@ -21,7 +23,7 @@ function App() {
           <Route path="/boarding" element={<Boarding />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
-      <Footer />
+        <Footer />
       </Router>
     </div>
   );
